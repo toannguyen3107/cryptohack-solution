@@ -8,13 +8,13 @@ for i in range(0, 1111):
     y = 6+29*i
     z = 11+29*i
     if solve(x) == True:
-        print(x)
+        print(math.sqrt(x))
         break
     elif solve(y) == True:
-        print(y)
+        print(math.sqrt(y))
         break
     elif solve(z) ==True:
-        print(z)
+        print(math.sqrt(z))
         break
 
 
