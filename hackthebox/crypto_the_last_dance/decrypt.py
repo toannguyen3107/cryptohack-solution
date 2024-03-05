@@ -1,6 +1,6 @@
 """
 	Author: Minh Toan
-	date: 3/5/2024
+	Date: 3/5/2024
 	Description: In chacha20, enc_mess = <chacha20> xor plaint text 
 => enc1 xor enc2 = plaintext1 xor plaintext2
 => encFlag xor encMessage xor message = flag
