@@ -1,6 +1,6 @@
-# Solution CryptoHack
+# Solution CryptoHack - hackthebox - bandit wargame - ctf
 
-This repository contains solutions to code challenges from the CryptoHack website.
+This repository contains solutions to code challenges about crypto, ctf, wargame.
 
 ## Description
 
@@ -19,9 +19,9 @@ There is no need to install anything for this repository. You can simply browse 
 
 ## Usage
 
-Each directory in this repository corresponds to a specific category or challenge on CryptoHack. Inside each directory, you'll find code solutions, explanations, and any additional resources related to the challenges.
+Each directory in this repository corresponds to a specific category or challenge on CryptoHack, Hackthebox, overthewire or tryhackme. Inside each directory, you'll find code solutions, explanations, and any additional resources related to the challenges.
 
-Feel free to explore and use the solutions to learn more about cryptography and security.
+Feel free to explore and use the solutions to learn more about cryptography, security, vul analysis.
 
 ## Contributing
 
