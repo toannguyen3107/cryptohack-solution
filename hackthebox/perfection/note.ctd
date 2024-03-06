@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <bookmarks list=""/>
+  <node name="Perfection" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="1" foreground="" ts_creation="1709748123" ts_lastsave="1709748565">
+    <node name="Scan" unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1709748137" ts_lastsave="1709748167">
+      <rich_text># Nmap 7.94SVN scan initiated Wed Mar  6 11:31:07 2024 as: nmap -sV -p- --min-rate 1500 -vv -oN nmap/perfection 10.10.11.253
+Increasing send delay for 10.10.11.253 from 10 to 20 due to 263 out of 875 dropped probes since last increase.
+Increasing send delay for 10.10.11.253 from 20 to 40 due to 1243 out of 4141 dropped probes since last increase.
+Increasing send delay for 10.10.11.253 from 160 to 320 due to 1238 out of 4126 dropped probes since last increase.
+Increasing send delay for 10.10.11.253 from 640 to 1000 due to 430 out of 1433 dropped probes since last increase.
+Nmap scan report for 10.10.11.253
+Host is up, received echo-reply ttl 63 (0.32s latency).
+Scanned at 2024-03-06 11:31:15 EST for 79s
+Not shown: 65533 closed tcp ports (reset)
+PORT   STATE SERVICE REASON         VERSION
+22/tcp open  ssh     syn-ack ttl 63 OpenSSH 8.9p1 Ubuntu 3ubuntu0.6 (Ubuntu Linux; protocol 2.0)
+80/tcp open  http    syn-ack ttl 63 nginx
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at </rich_text>
+      <rich_text link="webs https://nmap.org/submit/">https://nmap.org/submit/</rich_text>
+      <rich_text> .
+# Nmap done at Wed Mar  6 11:32:34 2024 -- 1 IP address (1 host up) scanned in 87.03 seconds
+</rich_text>
+    </node>
+    <node name="Exploit" unique_id="3" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1709748201" ts_lastsave="1709748465">
+      <rich_text>This vul follow SSTI
+</rich_text>
+      <node name="payload" unique_id="4" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1709748236" ts_lastsave="1709748322">
+        <rich_text>&lt;%= `&lt;payload python3 reserve to the attack machine&gt;`%&gt;
+Get full Pty: 
+- create folder `.ssh` at susan machine
+- touch file authorized_keys: pass ssh_key of the attack machine
+- using the attack machine run: `ssh -i &lt;private_key&gt; &lt;susan@&lt;TheTargetHost&gt;&gt;`
+- </rich_text>
+      </node>
+      <node name="UserKey" unique_id="5" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1709748465" ts_lastsave="1709748467">
+        <rich_text>susan@perfection:~$ cat user.txt
+3c88a9bb2f5a8bbcdbd7cd72c95f15fe
+</rich_text>
+      </node>
+    </node>
+    <node name="Privilege Escalation" unique_id="6" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1709748565" ts_lastsave="1709748583">
+      <rich_text>sdfa</rich_text>
+    </node>
+  </node>
+</cherrytree>
