@@ -4,7 +4,7 @@ This repository contains solutions to code challenges about crypto, ctf, wargame
 
 ## Description
 
-CryptoHack is a platform that offers various cryptographic challenges to improve your skills in cryptography and security. This repository serves as a collection of solutions to those challenges.
+This git use for note about my learning in hackthebox, crypto cipher, ctf or cyber sercurity.
 
 ## Table of Contents
 
