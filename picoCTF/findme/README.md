@@ -1,5 +1,5 @@
 # solution
- - analysis the trafic when you send login request you see the request have form http://<target_host>/.../<base64 encode>
+ - analysis the trafic when you send login request you see the request have form http://<target_host>/.../<base64_encode>
  - You decode the crypt, you see
  ```shell
  ┌──(toan㉿kali)-[~]
