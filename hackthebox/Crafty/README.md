@@ -32,3 +32,6 @@ Service detection performed. Please report any incorrect results at https://nmap
  
 Again, goto web -> login success!
 ![image 2](./image/img2)
+
+You see in the main page, it recommend redirect to `play.crafty.htb`, same as the last step add this domain into /etc/host, and go to play.crafty.htb.
+
