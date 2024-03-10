@@ -35,3 +35,16 @@ Again, goto web -> login success!
 
 You see in the main page, it recommend redirect to `play.crafty.htb`, same as the last step add this domain into /etc/host, and go to play.crafty.htb.
 
+- Next, you need to install minecraft client in your linux machine, it use to connect the target server. You can search internet to install!
+
+## Exploit
+- Use log4shell, pyCraft -> msfvenom create payload
+- decode java program (program java in plugins folder at server is accessed) with jadx (clone and install from github) -> see password for administrator
+- using runas program (clone it from github), tranfer it to server, runas adminstrator account with other payload. -> access with privilege's administrator. 
+### End, Thanks for read 
+## ***Some screen window is useful for you!***
+![img 3](./image/img3)
+![img 4](./image/img4)
+![img 5](./image/img5)
+![img 6](./image/img6)
+![img 7](./image/img7)
