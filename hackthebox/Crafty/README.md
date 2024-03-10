@@ -1,4 +1,4 @@
-# Crafty
+# Crafty - Write-up
 
 ## Scanning 
 - Using nmap tools: `nmap -sV -A -p- --min-rate=1000 10.10.11.249 -v -oN ~/nmap/crafty`
@@ -28,3 +28,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 - Port is opened: 80 (webservice), 25565.
 - When you go to http://<target_host>, it redirected to other domain. *crafty.htb*
 ![image 1](./image/img1)
+- add domain into **/etc/hosts**. `echo "10.10.11.249 crafty.htb" | sudo tee -a /etc/hosts`.
+ 
+Again, goto web -> login success!
+![image 2](./image/img2)
