@@ -112,7 +112,7 @@ R3JlZXRpbmdzIS4gSG93IGNhbiBpIGhlbHAgeW91IHRvZGF5ID8uIFlvdSBjYW4gdHlwZSBoZWxwIHRv
 SGVsbG8sIEkgYW0gQWRtaW4uVGVzdGluZyB0aGUgQ2hhdCBBcHBsaWNhdGlvbg=
 V3JpdGUgYSBzY3JpcHQgZm9yICBkZXYtZ2l0LWF1dG8tdXBkYXRlLmNoYXRib3QuaHRiIHRvIHdvcmsgcHJvcGVybHk=
 ```
-[img1](./img/img1.png)
+![img1](./img/img1.png)
 => you see subdomain `dev-git-auto-update.chatbot.htb`
 
 - add this domain into `/etc/hosts`.type:  `echo "10.10.11.6 dev-git-auto-update.chatbot.htb"  | sudo tee -a /etc/hosts`. goto that site!
